@@ -1,0 +1,55 @@
+<?xml version="1.0" encoding="utf-8"?>
+<TableLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".UserActivity">
+
+
+    <TableRow
+
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
+        <TextView
+            android:id="@+id/tvUSER"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:text="Panel użytkownika"
+            android:textSize="25dp"
+            android:layout_weight="1"
+            android:gravity="center"
+            android:layout_marginTop="5sp"/>
+    </TableRow>
+
+    <TableRow
+        android:layout_height="match_parent"
+        android:layout_width="match_parent">
+
+        <Button
+            android:id="@+id/bShowMenu"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="5px"
+            android:layout_weight="1"
+            android:text="Sprawdź menu"
+            android:onClick="buttonShowMenuPressed">
+        </Button>
+    </TableRow>
+
+    <TableRow
+        android:layout_height="match_parent"
+        android:layout_width="match_parent">
+
+        <Button
+            android:id="@+id/bShowInformations"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:text="Sprawdź godziny otwarcia"
+            android:onClick="buttonShowInformations">
+        </Button>
+    </TableRow>
+
+</TableLayout>

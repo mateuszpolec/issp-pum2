@@ -1,0 +1,42 @@
+<?xml version="1.0" encoding="utf-8"?>
+<TableLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".InformationsActivity">
+
+
+    <TableRow
+
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
+        <TextView
+            android:id="@+id/tvINFORMATIONS_SHOW"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:text="Godziny otwarcia"
+            android:textSize="25dp"
+            android:layout_weight="1"
+            android:gravity="center"
+            android:layout_marginTop="5sp"/>
+    </TableRow>
+
+    <TableRow
+        android:layout_height="match_parent"
+        android:layout_width="match_parent">
+
+        <TextView
+            android:id="@+id/tvInformations"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:inputType="text"
+            android:layout_marginTop="25px"
+            android:textSize="18dp"
+            android:text="Wprowadź godziny otwarcia..."/>
+    </TableRow>
+
+
+</TableLayout>

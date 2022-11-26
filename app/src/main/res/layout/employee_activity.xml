@@ -1,0 +1,86 @@
+<?xml version="1.0" encoding="utf-8"?>
+<TableLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".EmployeeActivity">
+
+
+    <TableRow
+
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
+        <TextView
+            android:id="@+id/tvEMPLOYEE"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:text="Panel pracownika"
+            android:textSize="25dp"
+            android:layout_weight="1"
+            android:gravity="center"
+            android:layout_marginTop="5sp"/>
+    </TableRow>
+
+    <TableRow
+        android:layout_height="match_parent"
+        android:layout_width="match_parent">
+
+        <Button
+            android:id="@+id/bShowMenu"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="5px"
+            android:layout_weight="1"
+            android:text="MENU"
+            android:onClick="buttonShowMenuPressed">
+        </Button>
+    </TableRow>
+
+    <TableRow
+        android:layout_height="match_parent"
+        android:layout_width="match_parent">
+
+        <Button
+            android:id="@+id/bAddToMenu"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="5px"
+            android:layout_weight="1"
+            android:text="DODAJ DO MENU"
+            android:onClick="buttonAddToMenuPressed">
+        </Button>
+    </TableRow>
+
+    <TableRow
+        android:layout_height="match_parent"
+        android:layout_width="match_parent">
+
+        <Button
+            android:id="@+id/bShowInformations"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="50px"
+            android:layout_weight="1"
+            android:text="Godziny otwarcia"
+            android:onClick="buttonShowInformationsPressed">
+        </Button>
+    </TableRow>
+
+    <TableRow
+        android:layout_height="match_parent"
+        android:layout_width="match_parent">
+
+        <Button
+            android:id="@+id/bUpdateInformations"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="5px"
+            android:layout_weight="1"
+            android:text="Edytuj godziny otwarcia"
+            android:onClick="buttonUpdateInformationsPressed">
+        </Button>
+    </TableRow>
+
+</TableLayout>
