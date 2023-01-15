@@ -8,7 +8,7 @@ import android.database.sqlite.SQLiteOpenHelper;
 
 public class DbMenu extends SQLiteOpenHelper {
 
-    private static final int DB_VERSION = 1;
+    private static final int DB_VERSION = 2;
     private static final String DB_NAME = "DbMenu.db";
 
     // TODO: Dodać alergeny.
@@ -22,6 +22,7 @@ public class DbMenu extends SQLiteOpenHelper {
     public static final String MENU_PRICE = "price";
     public static final String MENU_WEIGHT = "weight";
     public static final String MENU_TIME_TO_PREPARE = "time_to_prepare";
+    public static final String MENU_ALLERGENS = "allergens";
 
     public DbMenu(Context context)
     {
@@ -32,7 +33,7 @@ public class DbMenu extends SQLiteOpenHelper {
     public void onCreate(SQLiteDatabase db)
     {
         String INITIALIZE_TABLE = String.format(
-                "CREATE TABLE %s (%s INTEGER PRIMARY KEY, %s TEXT, %s TEXT, %s TEXT, %s TEXT, %s INTEGER, %s INTEGER, %s INTEGER)", MENU_TABLE_NAME, MENU_COLUMN_ID, MENU_DISH_ID, MENU_NAME, MENU_INGREDIENTS, MENU_RECIPE, MENU_PRICE, MENU_WEIGHT, MENU_TIME_TO_PREPARE
+                "CREATE TABLE %s (%s INTEGER PRIMARY KEY, %s TEXT, %s TEXT, %s TEXT, %s TEXT, %s INTEGER, %s INTEGER, %s INTEGER, %s TEXT)", MENU_TABLE_NAME, MENU_COLUMN_ID, MENU_DISH_ID, MENU_NAME, MENU_INGREDIENTS, MENU_RECIPE, MENU_PRICE, MENU_WEIGHT, MENU_TIME_TO_PREPARE, MENU_ALLERGENS
         );
 
         db.execSQL(INITIALIZE_TABLE);
@@ -63,6 +64,7 @@ public class DbMenu extends SQLiteOpenHelper {
         cv.put(MENU_PRICE, dish.getPrice());
         cv.put(MENU_WEIGHT, dish.getWeight());
         cv.put(MENU_TIME_TO_PREPARE, dish.getTimeToPrepare());
+        cv.put(MENU_ALLERGENS, dish.getAllergens());
 
         SQLiteDatabase db = this.getWritableDatabase();
 
@@ -94,6 +96,7 @@ public class DbMenu extends SQLiteOpenHelper {
         cv.put(MENU_PRICE, dish.getPrice());
         cv.put(MENU_WEIGHT, dish.getWeight());
         cv.put(MENU_TIME_TO_PREPARE, dish.getTimeToPrepare());
+        cv.put(MENU_ALLERGENS, dish.getAllergens());
 
         SQLiteDatabase db = this.getWritableDatabase();
         db.update(MENU_TABLE_NAME, cv, MENU_DISH_ID + " = ?", new String[]{String.valueOf(dish.getId().toString())});

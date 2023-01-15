@@ -8,10 +8,8 @@ import android.database.sqlite.SQLiteOpenHelper;
 
 public class DbOrders extends SQLiteOpenHelper {
 
-    private static final int DB_VERSION = 1;
+    private static final int DB_VERSION = 5;
     private static final String DB_NAME = "DbOrders.db";
-
-    // TODO: Zamówienia na godziny.
 
     public static final String ORDER_TABLE_NAME = "orders";
     public static final String ORDER_COLUMN_ID = "id";
@@ -24,6 +22,8 @@ public class DbOrders extends SQLiteOpenHelper {
     public static final String ORDER_TOTAL_PRICE = "total_price";
     public static final String ORDER_TABLE_NUMBER = "table_number";
     public static final String ORDER_STATUS = "status";
+    public static final String ORDER_WAY_OF_SERVING = "way_of_serving";
+    public static final String ORDER_PICKUP_TIME = "pickup_time";
 
     public DbOrders(Context context)
     {
@@ -34,7 +34,7 @@ public class DbOrders extends SQLiteOpenHelper {
     public void onCreate(SQLiteDatabase db)
     {
         String INITIALIZE_TABLE = String.format(
-                "CREATE TABLE %s (%s INTEGER PRIMARY KEY, %s TEXT, %s TEXT, %s TEXT, %s TEXT, %s TEXT, %s INTEGER, %s INTEGER, %s INTEGER, %s INTEGER)", ORDER_TABLE_NAME, ORDER_COLUMN_ID, ORDER_ORDER_ID, ORDER_WHO_ORDERED, ORDER_DISH_NAMES, ORDER_COMMENTS, ORDER_ADDRESS, ORDER_TELEPHONE, ORDER_TOTAL_PRICE, ORDER_TABLE_NUMBER, ORDER_STATUS
+                "CREATE TABLE %s (%s INTEGER PRIMARY KEY, %s TEXT, %s TEXT, %s TEXT, %s TEXT, %s TEXT, %s INTEGER, %s INTEGER, %s INTEGER, %s INTEGER, %s INTEGER, %s TEXT)", ORDER_TABLE_NAME, ORDER_COLUMN_ID, ORDER_ORDER_ID, ORDER_WHO_ORDERED, ORDER_DISH_NAMES, ORDER_COMMENTS, ORDER_ADDRESS, ORDER_TELEPHONE, ORDER_TOTAL_PRICE, ORDER_TABLE_NUMBER, ORDER_STATUS, ORDER_WAY_OF_SERVING, ORDER_PICKUP_TIME
         );
 
         db.execSQL(INITIALIZE_TABLE);
@@ -65,8 +65,10 @@ public class DbOrders extends SQLiteOpenHelper {
         cv.put(ORDER_ADDRESS, order.getAddress());
         cv.put(ORDER_TELEPHONE, order.getTelephone());
         cv.put(ORDER_TOTAL_PRICE, order.getTotalPrice());
-        cv.put(ORDER_TABLE_NAME, order.getTableNumber());
+        cv.put(ORDER_TABLE_NUMBER, order.getTableNumber());
         cv.put(ORDER_STATUS, order.getStatus().ordinal());
+        cv.put(ORDER_WAY_OF_SERVING, order.getWayOfServing().ordinal());
+        cv.put(ORDER_PICKUP_TIME, order.getPickupTime());
 
         SQLiteDatabase db = this.getWritableDatabase();
 
@@ -96,8 +98,10 @@ public class DbOrders extends SQLiteOpenHelper {
         cv.put(ORDER_ADDRESS, order.getAddress());
         cv.put(ORDER_TELEPHONE, order.getTelephone());
         cv.put(ORDER_TOTAL_PRICE, order.getTotalPrice());
-        cv.put(ORDER_TABLE_NAME, order.getTableNumber());
+        cv.put(ORDER_TABLE_NUMBER, order.getTableNumber());
         cv.put(ORDER_STATUS, order.getStatus().ordinal());
+        cv.put(ORDER_WAY_OF_SERVING, order.getWayOfServing().ordinal());
+        cv.put(ORDER_PICKUP_TIME, order.getPickupTime());
 
         SQLiteDatabase db = this.getWritableDatabase();
         db.update(ORDER_TABLE_NAME, cv, ORDER_ORDER_ID + " = ?", new String[]{String.valueOf(order.getId().toString())});

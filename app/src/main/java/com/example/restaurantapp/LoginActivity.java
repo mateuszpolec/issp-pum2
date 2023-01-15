@@ -8,6 +8,8 @@ import android.widget.EditText;
 
 import androidx.appcompat.app.AppCompatActivity;
 
+import java.util.UUID;
+
 public class LoginActivity extends AppCompatActivity {
 
     private DbUsers mDbUsers;
@@ -40,6 +42,7 @@ public class LoginActivity extends AppCompatActivity {
 
         while (c.moveToNext())
         {
+            String cursorUUID = c.getString(1);
             String cursorUserName = c.getString(2);
             String cursorPassword = c.getString(3);
 
@@ -50,9 +53,9 @@ public class LoginActivity extends AppCompatActivity {
                 String cursorUserEmail = c.getString(4);
                 Permissions.Type permission = Permissions.Type.values()[c.getInt(5)];
 
-                User u = new User(userName, userPassword, cursorUserEmail, permission);
+                User u = new User(UUID.fromString(cursorUUID), userName, userPassword, cursorUserEmail, permission);
 
-                MainActivity.CurrentUser = u;
+                CurrentUser.user = u;
 
                 if (u.IsEmployee()) {
                     Intent employeeActivity = new Intent(view.getContext(), EmployeeActivity.class);

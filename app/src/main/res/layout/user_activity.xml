@@ -52,4 +52,48 @@
         </Button>
     </TableRow>
 
+    <TableRow
+        android:layout_height="match_parent"
+        android:layout_width="match_parent"
+        android:layout_marginTop="50px">
+
+        <Button
+            android:id="@+id/bStartOrder"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:text="ZAMÓW Z DOWOZEM"
+            android:onClick="buttonStartOrderPressed">
+        </Button>
+    </TableRow>
+
+    <TableRow
+        android:layout_height="match_parent"
+        android:layout_width="match_parent"
+        android:layout_marginTop="5px">
+
+        <Button
+            android:id="@+id/bStartOrderTakeaway"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:text="ZAMÓW Z ODBIOREM W RESTAURACJI"
+            android:onClick="buttonStartOrderTakeawayPressed">
+        </Button>
+    </TableRow>
+
+    <TableRow
+        android:layout_height="match_parent"
+        android:layout_width="match_parent">
+
+        <Button
+            android:id="@+id/bShowOrders"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:text="SPRAWDŹ SWOJE ZAMÓWIENIA"
+            android:onClick="buttonShowOrdersPressed">
+        </Button>
+    </TableRow>
+
 </TableLayout>

@@ -105,6 +105,19 @@
         android:layout_height="match_parent"
         android:layout_width="match_parent">
 
+        <EditText
+            android:id="@+id/etAllergens"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:inputType="number"
+            android:hint="Czas przygotowania (minuty)"/>
+    </TableRow>
+
+    <TableRow
+        android:layout_height="match_parent"
+        android:layout_width="match_parent">
+
         <Button
             android:id="@+id/bEditDish"
             android:layout_width="wrap_content"

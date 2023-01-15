@@ -45,4 +45,16 @@ public class EmployeeActivity extends AppCompatActivity {
         view.getContext().startActivity(updateInformations);
     }
 
+    public void buttonAddOrderPressed(View view)
+    {
+        Intent addOrderActivity = new Intent(view.getContext(), OrderAddEmployeeActivity.class);
+        view.getContext().startActivity(addOrderActivity);
+    }
+
+    public void buttonShowOrdersPressed(View view)
+    {
+        Intent showOrdersActivity = new Intent(view.getContext(), OrderListActivity.class);
+        view.getContext().startActivity(showOrdersActivity);
+    }
+
 }

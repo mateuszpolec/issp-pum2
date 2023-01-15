@@ -23,6 +23,7 @@ public class DishActivity extends AppCompatActivity {
     private EditText etDishPrice;
     private EditText etDishWeight;
     private EditText etDishTimeToPrepare;
+    private EditText etAllergens;
 
     private Button bEditDish;
     private Button bDeleteDish;
@@ -39,6 +40,7 @@ public class DishActivity extends AppCompatActivity {
         etDishPrice = findViewById(R.id.etDishPrice);
         etDishWeight = findViewById(R.id.etDishWeight);
         etDishTimeToPrepare = findViewById(R.id.etDishTimeToPrepare);
+        etAllergens = findViewById(R.id.etAllergens);
         bEditDish = findViewById(R.id.bEditDish);
         bDeleteDish = findViewById(R.id.bDeleteDish);
 
@@ -56,10 +58,11 @@ public class DishActivity extends AppCompatActivity {
         etDishPrice.setText(Integer.toString(mCurrentDish.getPrice()));
         etDishWeight.setText(Integer.toString(mCurrentDish.getWeight()));
         etDishTimeToPrepare.setText(Integer.toString(mCurrentDish.getTimeToPrepare()));
+        etAllergens.setText(mCurrentDish.getAllergens());
 
-        if (MainActivity.CurrentUser != null)
+        if (CurrentUser.user != null)
         {
-            if (MainActivity.CurrentUser.IsEmployee())
+            if (CurrentUser.user.IsEmployee())
             {
                 bEditDish.setVisibility(View.VISIBLE);
                 bDeleteDish.setVisibility(View.VISIBLE);
@@ -75,6 +78,7 @@ public class DishActivity extends AppCompatActivity {
         int dishPrice = Integer.parseInt(etDishPrice.getText().toString());
         int dishWeight = Integer.parseInt(etDishWeight.getText().toString());
         int dishTimeToPrepare = Integer.parseInt(etDishTimeToPrepare.getText().toString());
+        String dishAllergens = etAllergens.getText().toString();
 
         mCurrentDish.setName(dishName);
         mCurrentDish.setIngredients(dishIngredients);
@@ -82,6 +86,9 @@ public class DishActivity extends AppCompatActivity {
         mCurrentDish.setPrice(dishPrice);
         mCurrentDish.setWeight(dishWeight);
         mCurrentDish.setTimeToPrepare(dishTimeToPrepare);
+        mCurrentDish.setAllergens(dishAllergens);
+
+        System.out.println(mCurrentDish.getPrice());
 
         mDbMenu.updateDish(mCurrentDish);
 

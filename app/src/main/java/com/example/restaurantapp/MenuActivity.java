@@ -91,11 +91,13 @@ public class MenuActivity extends AppCompatActivity implements DishAdapter.ItemC
                 UUID dishId = UUID.fromString(c.getString(1));
                 String dishName = c.getString(2);
                 String dishIngredients = c.getString(3);
-                String dishRecepie = c.getString(3);
-                int dishPrice = c.getInt(4);
-                int dishWeight = c.getInt(5);
-                int dishTimeToPrepare = c.getInt(6);
-                mDishes.add(new Dish(dishId, dishName, dishIngredients, dishRecepie, dishPrice, dishWeight, dishTimeToPrepare));
+                String dishRecepie = c.getString(4);
+                int dishPrice = c.getInt(5);
+                int dishWeight = c.getInt(6);
+                int dishTimeToPrepare = c.getInt(7);
+                String dishAllergens = c.getString(8);
+
+                mDishes.add(new Dish(dishId, dishName, dishIngredients, dishRecepie, dishPrice, dishWeight, dishTimeToPrepare, dishAllergens));
             }
         }
     }

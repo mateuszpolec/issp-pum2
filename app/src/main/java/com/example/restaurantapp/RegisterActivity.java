@@ -40,20 +40,12 @@ public class RegisterActivity extends AppCompatActivity {
         while (c.moveToNext())
         {
             String cursorUserName = c.getString(2);
-            String cursorEmail = c.getString(4);
 
             System.out.println(cursorUserName);
 
             if (userName.equals(cursorUserName))
             {
                 System.out.println("This user already exists!");
-                correct = false;
-                break;
-            }
-
-            if (userEmail.equals(cursorEmail))
-            {
-                System.out.println("Account with that mail already exists!");
                 correct = false;
                 break;
             }

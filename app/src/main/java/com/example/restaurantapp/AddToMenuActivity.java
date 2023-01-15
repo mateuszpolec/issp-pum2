@@ -19,6 +19,7 @@ public class AddToMenuActivity extends AppCompatActivity {
     private EditText etDishPrice;
     private EditText etDishWeight;
     private EditText etDishTimeToPrepare;
+    private EditText etAllergens;
 
     @Override
     protected void onCreate(Bundle savedInstanceBundle)
@@ -32,6 +33,7 @@ public class AddToMenuActivity extends AppCompatActivity {
         etDishPrice = findViewById(R.id.etDishPrice);
         etDishWeight = findViewById(R.id.etDishWeight);
         etDishTimeToPrepare = findViewById(R.id.etDishTimeToPrepare);
+        etAllergens = findViewById(R.id.etAllergens);
 
         mDbMenu = new DbMenu(this);
     }
@@ -45,8 +47,9 @@ public class AddToMenuActivity extends AppCompatActivity {
         int dishPrice = Integer.parseInt(etDishPrice.getText().toString());
         int dishWeight = Integer.parseInt(etDishWeight.getText().toString());
         int dishTimeToPrepare = Integer.parseInt(etDishTimeToPrepare.getText().toString());
+        String dishAllergens = etAllergens.getText().toString();
 
-        Dish dish = new Dish(dishId, dishName, dishIngredients, dishRecepie, dishPrice, dishWeight, dishTimeToPrepare);
+        Dish dish = new Dish(dishId, dishName, dishIngredients, dishRecepie, dishPrice, dishWeight, dishTimeToPrepare, dishAllergens);
 
         mDbMenu.addDish(dish);
 

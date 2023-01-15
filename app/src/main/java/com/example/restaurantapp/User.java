@@ -21,8 +21,9 @@ public class User {
         this.mLogged = false;
     }
 
-    public User(String name, String password, String email, Permissions.Type permission)
+    public User(UUID id, String name, String password, String email, Permissions.Type permission)
     {
+        this.mId = id;
         this.mName = name;
         this.mPassword = password;
         this.mEmail = email;

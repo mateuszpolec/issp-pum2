@@ -1,0 +1,168 @@
+<?xml version="1.0" encoding="utf-8"?>
+<TableLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".OrderAddUserActivity">
+
+
+    <TableRow
+
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
+        <TextView
+            android:id="@+id/tvORDERADD"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:text="Złóż zamówienie"
+            android:textSize="25dp"
+            android:layout_weight="1"
+            android:gravity="center"
+            android:layout_marginTop="5sp"/>
+    </TableRow>
+
+    <TableRow
+
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:layout_marginTop="50px">
+
+        <TextView
+            android:id="@+id/tvSelectDishText"
+            android:text="Wybierz danie: "
+            ></TextView>
+
+        <Spinner
+            android:id="@+id/sSelectDish"
+            android:layout_width="wrap_content"
+            android:layout_height="match_parent"></Spinner>
+    </TableRow>
+
+    <TableRow
+        android:layout_height="match_parent"
+        android:layout_width="match_parent"
+        android:layout_marginTop="25px">
+
+        <EditText
+            android:id="@+id/etAddress"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:inputType="text"
+            android:textSize="12dp"
+            android:hint="Adres zamówienia (miasto, ulica, numer mieszkania)"/>
+    </TableRow>
+
+    <TableRow
+        android:layout_height="match_parent"
+        android:layout_width="match_parent"
+        android:layout_marginTop="25px">
+
+        <EditText
+            android:id="@+id/etTelephoneNumber"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:inputType="number"
+            android:textSize="12dp"
+            android:hint="Numer telefonu"/>
+    </TableRow>
+
+
+    <TableRow
+        android:layout_height="match_parent"
+        android:layout_width="match_parent"
+        android:layout_marginTop="25px">
+
+        <EditText
+            android:id="@+id/etComments"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:inputType="text"
+            android:textSize="12dp"
+            android:hint="Komentarze"/>
+    </TableRow>
+
+    <TableRow
+
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:layout_marginTop="50px">
+        <TextView
+            android:id="@+id/tvCurrentOrder"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:text="Aktualne zamówienie: "
+            android:textSize="12dp"
+            android:layout_weight="1"
+            android:gravity="center"
+            android:layout_marginTop="5sp"/>
+    </TableRow>
+
+    <TableRow
+
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:layout_marginTop="25px">
+        <TextView
+            android:id="@+id/tvCurrentPrice"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:text="Aktualna cena: 0zł"
+            android:textSize="12dp"
+            android:layout_weight="1"
+            android:gravity="center"
+            android:layout_marginTop="5sp"/>
+    </TableRow>
+
+    <TableRow
+
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:layout_marginTop="25px">
+        <TextView
+            android:id="@+id/tvCurrentAllergens"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:text="Lista alergenów:"
+            android:textSize="12dp"
+            android:layout_weight="1"
+            android:gravity="center"
+            android:layout_marginTop="5sp"/>
+    </TableRow>
+
+    <TableRow
+        android:layout_height="match_parent"
+        android:layout_width="match_parent"
+        android:layout_marginTop="50px">
+
+        <Button
+            android:id="@+id/bAddToBasket"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="5px"
+            android:layout_weight="1"
+            android:text="Dodaj do koszyka"
+            android:onClick="buttonAddToBasketPressed">
+        </Button>
+    </TableRow>
+
+    <TableRow
+        android:layout_height="match_parent"
+        android:layout_width="match_parent">
+
+        <Button
+            android:id="@+id/bFinishOrder"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="5px"
+            android:layout_weight="1"
+            android:text="Finalizuj zamówienie"
+            android:onClick="buttonFinishOrderPressed">
+        </Button>
+    </TableRow>
+
+</TableLayout>
